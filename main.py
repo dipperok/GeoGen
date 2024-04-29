@@ -4,6 +4,7 @@ import random
 import math
 import csv
 
+
 class layer_models:
     def __init__(self, N = 1, NY=60, NX=120, layerCount = None, layerThickness=[], layerValues=[],
                   scatterMaxValue=5, scatterPeriod=5, smoothness=False, Y=None, L=None, shiftForce=None,
