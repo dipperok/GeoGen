@@ -54,7 +54,6 @@ class layer_models:
         self.shiftCount = shiftCount
         self.withoutShift = withoutShift
 
-
         self.LSave = []
         self.YstartSave = []
         self.layerValuesSave = []
@@ -93,7 +92,6 @@ class layer_models:
                     self.layerThickness[index] = val
                     self.layerThickness.append(val)
                 else: break
-
 
         if (len(self.layerValues) < self.layerCount):
             layerValues = []
@@ -247,7 +245,6 @@ class layer_models:
             self.LSave.append(L)
             self.YstartSave.append(Ystart)
             
-
         for i in (range(columns) if shiftType else reversed(range(columns))):
             de2 = temp * (i - Ystart)
             for j in (range(rows) if shiftType else reversed(range(rows))):
@@ -328,10 +325,6 @@ class layer_models:
             diff = self.N % cores
 
             for i in range(cores):
-                # processes.append(multiprocessing.Process(target=self.multi_sequential, args=(i, models, diff + calc if i == 1 else calc,
-                #                                                                               self.NY, self.NX, layerCount, self.layerThickness, self.layerValues, 
-                #                                                                               self.scatterMaxValue, self.scatterPeriod, self.smoothness, self.Y, self.L, 
-                #                                                                               side, shiftType, shiftForce), daemon=True))
                 processes[i].start()
 
             for p in processes:
@@ -364,7 +357,6 @@ class layer_models:
         - limit - models limit
         - cmap - Colormap
         """
-
         if (len(self.models) > limit):
             self.models = self.models[:limit]
 
